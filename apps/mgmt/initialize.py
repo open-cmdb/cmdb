@@ -14,16 +14,21 @@ data_url_map = {}
 record_data_url_map = {}
 deleted_data_url_map = {}
 
+def add_index(table_name):
+    indices_client.create(index=table_name)
 
 def delete_index(table_name):
     try:
         indices_client.delete(index=table_name)
     except NotFoundError:
         return
-    except Exception as exc:
-        raise exceptions.APIException("内部错误，错误类型:{}".format(type(exc)))
 
-def add_table(table):
+def add_table(table, create_index=False):
+    if(create_index):
+        add_index(table.name)
+        add_index(table.name+".")
+        add_index(table.name+"..")
+
     data.initialize.add_serializer(table)
     viewset = data.initialize.add_viewset(table)
     router = SimpleRouter(trailing_slash=False)

@@ -153,3 +153,6 @@ class DeletedDataViewset(mixins.RetrieveModelMixin,
 class PersonViewset(viewsets.ModelViewSet):
     serializer_class = app_serializers.PersonSerializer
     queryset = models.Person.objects.all()
+
+    def list(self, request, *args, **kwargs):
+        raise Exception("custome")

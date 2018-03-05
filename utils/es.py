@@ -8,7 +8,8 @@ es = Elasticsearch(hosts=settings.ELASTICSEARCH["hosts"],
                    # refresh nodes after a node fails to respond
                    sniff_on_connection_fail=True,
                    # and also every 60 seconds
-                   sniffer_timeout=12
+                   sniffer_timeout=12,
+                   http_auth=(settings.ELASTICSEARCH["user"], settings.ELASTICSEARCH["password"])
                    )
 
 

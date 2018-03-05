@@ -18,11 +18,9 @@ def add_viewset(table):
 
     def retrieve(self, request, *args, **kwargs):
         try:
-            res = es.search(index=record_data_index, doc_type="data", body={"query": {"match": {"S_data_id": kwargs["pk"]}}})
+            res = es.search(index=record_data_index, doc_type="record-data", body={"query": {"term": {"S-data-id": kwargs["pk"]}}}, sort="S-update-time:desc")
         except NotFoundError as exc:
             raise exceptions.NotFound("Document {} was not found in Type data of Index {}".format(kwargs["pk"], record_data_index))
-        except Exception as exc:
-            raise exceptions.APIException("内部错误, 错误类型：{}".format(type(exc)))
         return Response(res["hits"])
     viewset = type(table.name, (mixins.RetrieveModelMixin, viewsets.GenericViewSet), dict(list=list, retrieve=retrieve))
     setattr(views, table.name, viewset)

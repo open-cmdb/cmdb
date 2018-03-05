@@ -12,6 +12,6 @@ class ExceptionMiddleware:
 
     def process_exception(self, request, exception):
         data = {
-            "detail": "Server error: "+str(exception)
+            "detail": str(exception)
         }
         return HttpResponse(json.dumps(data), status=500)
