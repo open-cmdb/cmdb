@@ -1,0 +1,2 @@
+webpackJsonp([21],{vEFi:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",[t("el-button",{on:{click:this.on_jump}},[this._v("jump")])],1)},staticRenderFns:[]},s=n("VU/8")({methods:{on_jump:function(){this.$router.push("/api/v1/docs")}}},u,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=21.a58cbf3edc253ca233b1.js.map
