@@ -144,9 +144,19 @@ if __name__ == '__main__':
 mingmingtang/cmdb
 
 ### 初始化数据库
+```bash
 docker run -it --name cmdb-init-db --rm -e DB_HOST=数据库地址 -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb mingmingtang/cmdb init-db
-示例：docker run -it --name cmdb-init-db --rm DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
+```
+示例：
+```bash
+docker run -it --name cmdb-init-db --rm DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
+```
 
 ### 运行CMDB
+```bash
 docker run -d --name cmdb -p 80:80 -e SITE_URL=网站地址 -e DB_HOST=数据库地址 -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=ES地址，多个用英文逗号隔开，格式http://xx.xx.xx.xx:9200 -e EMAIL_HOST=邮箱smtp地址 -e EMAIL_PORT=邮箱smtp端口 -e EMAIL_USERNAME=发件箱 -e EMAIL_PASSWORD=邮箱密码 mingmingtang/cmdb start
-示例：docker run -d --name cmdb -p 80:80 -e SITE_URL=http://120.79.60.130 -e DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=http://127.0.0.1:9200 -e EMAIL_HOST=smtp.163.com -e EMAIL_PORT=25 -e EMAIL_USERNAME=mmt_cmdb@163.com -e EMAIL_PASSWORD=******** mingmingtang/cmdb start
+```
+示例：
+```bash
+docker run -d --name cmdb -p 80:80 -e SITE_URL=http://120.79.60.130 -e DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=http://127.0.0.1:9200 -e EMAIL_HOST=smtp.163.com -e EMAIL_PORT=25 -e EMAIL_USERNAME=mmt_cmdb@163.com -e EMAIL_PASSWORD=******** mingmingtang/cmdb start
+```
