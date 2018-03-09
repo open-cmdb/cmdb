@@ -135,7 +135,7 @@ if __name__ == '__main__':
     print("开始运行cmdb")
     run_cmdb_container(site_url, email_host, email_port, email_username, email_password)
     print("完成！")
-
+```
 
 ## 手工部署
 先安装好Elasticsearch 和 Mysql
