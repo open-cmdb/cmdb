@@ -19,9 +19,9 @@ import ldap
 from django_auth_ldap.config import LDAPSearch
 
 
-# logger = logging.getLogger('django_auth_ldap')
-# logger.addHandler(logging.StreamHandler())
-# logger.setLevel(logging.DEBUG)
+logger = logging.getLogger('django_auth_ldap')
+logger.addHandler(logging.StreamHandler())
+logger.setLevel(logging.DEBUG)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -103,11 +103,11 @@ WSGI_APPLICATION = 'cmdb.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': os.getenv("DB_NAME", ""),
-    "HOST": os.getenv("DB_HOST", "127.0.0.1"),
-    "PORT": int(os.getenv("DB_PORT", 3306)),
-    "USER": os.getenv("DB_USERNAME", ""),
-    "PASSWORD": os.getenv("DB_PASSWORD", "")
+    'NAME': "cmdb",
+    "HOST": "127.0.0.1",
+    "PORT": 3306,
+    "USER": "root",
+    "PASSWORD": "tmm******"
   }
 }
 
@@ -156,6 +156,26 @@ STATIC_URL = '/static/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+
+AUTHENTICATION_BACKENDS = [
+    # 'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+AUTH_LDAP_SERVER_URI = "ldap://192.168.1.203:389"
+AUTH_LDAP_CONNECTION_OPTIONS = {
+    ldap.OPT_REFERRALS: 0
+}
+AUTH_LDAP_BIND_DN = "cn=Manager,dc=hbgd,dc=com"
+AUTH_LDAP_BIND_PASSWORD = "tmm******"
+# AUTH_LDAP_USER_DN_TEMPLATE = "uid=%(user)s,ou=sales,dc=hbgd,dc=com"
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=sales,dc=hbgd,dc=com",
+                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+AUTH_LDAP_USER_ATTR_MAP = {
+    "first_name": "givenName",
+    "last_name": "sn",
+    "email": "mail"
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -171,16 +191,11 @@ JWT_AUTH = {
     "JWT_EXPIRATION_DELTA": datetime.timedelta(days=7),
 }
 
-
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-]
-
 ELASTICSEARCH = {
-    "hosts": os.getenv("ELASTICSEARCH_HOSTS", "").split(","),
-    "user": os.getenv("ELASTICSEARCH_USERNAME", ""),
-    "password": os.getenv("ELASTICSEARCH_PASSWORD", ""),
+    "hosts": ["http://127.0.0.1:9200"],
+    "username": "",
+    "user": "cmdb",
+    "password": "tmm******",
     "index_map": {
         "data": "data",
         "record_data": "record_data",
@@ -189,16 +204,25 @@ ELASTICSEARCH = {
 }
 
 #网站URL
-SITE_URL = os.getenv("SITE_URL", "")
+SITE_URL = "http://cmdb.mingmingt.xyz"
 
 #发送邮件邮箱设置
-SEND_EMAIL = os.getenv("EMAIL_USERNAME", "")
+SEND_EMAIL = 'mmt_cmdb@163.com'
+#
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.163.com'                       #SMTP地址 例如: smtp.163.com
+# EMAIL_PORT = 25                       #SMTP端口 例如: 25
+# EMAIL_HOST_USER = SEND_EMAIL                 #qq的邮箱 例如: xxxxxx@163.com
+# EMAIL_HOST_PASSWORD = 'tmm****** '              #我的邮箱密码 例如  xxxxxxxxx
+# EMAIL_SUBJECT_PREFIX = u'django'       #为邮件Subject-line前缀,默认是'[django]'
+# EMAIL_USE_TLS = True
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv("EMAIL_HOST", "")                       #SMTP地址 例如: smtp.163.com
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 25))                       #SMTP端口 例如: 25
+EMAIL_HOST = 'smtp.163.com'                       #SMTP地址 例如: smtp.163.com
+EMAIL_PORT = 25                       #SMTP端口 例如: 25
 EMAIL_HOST_USER = SEND_EMAIL                 #qq的邮箱 例如: xxxxxx@163.com
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD", "")              #我的邮箱密码 例如  xxxxxxxxx
+EMAIL_HOST_PASSWORD = 'mmt******'              #我的邮箱密码 例如  xxxxxxxxx
 EMAIL_SUBJECT_PREFIX = u'django'       #为邮件Subject-line前缀,默认是'[django]'
 EMAIL_USE_TLS = True
 EMAIL_TIMEOUT = 5
