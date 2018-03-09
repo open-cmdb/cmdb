@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/open-cmdb/cmdb/blob/dev/images/cmdb-1.png">
+    <img src="https://github.com/open-cmdb/cmdb/blob/dev/images/cmdb-0.png">
 </p>
 
 # cmdb
