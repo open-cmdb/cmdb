@@ -160,3 +160,5 @@ docker run -d --name cmdb -p 80:80 -e SITE_URL=网站地址 -e DB_HOST=数据库
 ```bash
 docker run -d --name cmdb -p 80:80 -e SITE_URL=http://120.79.60.130 -e DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=http://127.0.0.1:9200 -e EMAIL_HOST=smtp.163.com -e EMAIL_PORT=25 -e EMAIL_USERNAME=mmt_cmdb@163.com -e EMAIL_PASSWORD=******** mingmingtang/cmdb start
 ```
+
+## 嘿 哥们儿 给颗星吧 ┭┮﹏┭┮
