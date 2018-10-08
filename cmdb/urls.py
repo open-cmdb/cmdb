@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^api/v1/deleted-data/', include("deleted_data.urls")),
     url(r'^api/v1/token', obtain_jwt_token),
     url(r'^api/v1/mgmt/', include("mgmt.urls")),
-    url(r'^api/v1/docs', include_docs_urls(title="cmdb接口文档", permission_classes=())),
+    url(r'^api-docs', include_docs_urls(title="cmdb接口文档", permission_classes=())),
     url(r'^admin/', admin.site.urls),
     url(r'^c-test/', include("c_test.urls")),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

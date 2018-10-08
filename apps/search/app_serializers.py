@@ -1,7 +1,9 @@
 
 from rest_framework import serializers
 
-class SearchSerializer(serializers.Serializer):
+
+class DataLuceneSerializer(serializers.Serializer):
+
     SORT_CHOICES = (
         ("asc", "ascending"),
         ("desc", "descending"),
@@ -12,6 +14,12 @@ class SearchSerializer(serializers.Serializer):
     page = serializers.IntegerField(default=1, min_value=1, label="页码")
     page_size = serializers.IntegerField(default=10, min_value=1)
 
-class SearchDeletedSerializer(SearchSerializer):
-    def validate_indices(self, indices):
-        return list(map(lambda i: i+"..", indices))
+
+# class DeletedDataLuceneSerializer(DataLuceneSerializer):
+#
+#     def validate_indices(self, indices):
+#         return list(map(lambda i: i+"..", indices))
+
+class DataDSLSerializer(DataLuceneSerializer):
+    query = None
+    body = serializers.DictField(label="DSL查询内容")

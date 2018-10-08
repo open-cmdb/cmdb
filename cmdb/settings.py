@@ -15,8 +15,8 @@ import sys
 import logging
 import datetime
 
-import ldap
-from django_auth_ldap.config import LDAPSearch
+# import ldap
+# from django_auth_ldap.config import LDAPSearch
 
 
 logger = logging.getLogger('django_auth_ldap')
@@ -35,7 +35,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 SECRET_KEY = 'sma!&$c$t+qojc^8wt(&l=zow)pnt48*swk)79=jndngc1x@0x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -59,7 +59,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'utils.middleware.ExceptionMiddleware',
+    # 'utils.middleware.ExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -107,7 +107,7 @@ DATABASES = {
     "HOST": "127.0.0.1",
     "PORT": 3306,
     "USER": "root",
-    "PASSWORD": "tmm******"
+    "PASSWORD": "wonders,1"
   }
 }
 
@@ -156,25 +156,30 @@ STATIC_URL = '/static/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+AUTH_USER_MODEL = "mgmt.User"
+
+# 权限缓存时间（s） 0 代表不缓存
+PERMISSION_CACHE_TIME = 60
+
 
 AUTHENTICATION_BACKENDS = [
     # 'django_auth_ldap.backend.LDAPBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
-AUTH_LDAP_SERVER_URI = "ldap://192.168.1.203:389"
-AUTH_LDAP_CONNECTION_OPTIONS = {
-    ldap.OPT_REFERRALS: 0
-}
-AUTH_LDAP_BIND_DN = "cn=Manager,dc=hbgd,dc=com"
-AUTH_LDAP_BIND_PASSWORD = "tmm******"
-# AUTH_LDAP_USER_DN_TEMPLATE = "uid=%(user)s,ou=sales,dc=hbgd,dc=com"
-AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=sales,dc=hbgd,dc=com",
-                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
-AUTH_LDAP_USER_ATTR_MAP = {
-    "first_name": "givenName",
-    "last_name": "sn",
-    "email": "mail"
-}
+# AUTH_LDAP_SERVER_URI = "ldap://192.168.1.203:389"
+# AUTH_LDAP_CONNECTION_OPTIONS = {
+#     ldap.OPT_REFERRALS: 0
+# }
+# AUTH_LDAP_BIND_DN = "cn=Manager,dc=hbgd,dc=com"
+# AUTH_LDAP_BIND_PASSWORD = "tmm******"
+# # AUTH_LDAP_USER_DN_TEMPLATE = "uid=%(user)s,ou=sales,dc=hbgd,dc=com"
+# AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=sales,dc=hbgd,dc=com",
+#                                    ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+# AUTH_LDAP_USER_ATTR_MAP = {
+#     "first_name": "givenName",
+#     "last_name": "sn",
+#     "email": "mail"
+# }
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -185,6 +190,7 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+    'DEFAULT_METADATA_CLASS': 'utils.metadata.NoPermissionMetadata',
 }
 
 JWT_AUTH = {
@@ -193,9 +199,9 @@ JWT_AUTH = {
 
 ELASTICSEARCH = {
     "hosts": ["http://127.0.0.1:9200"],
-    "username": "",
-    "user": "cmdb",
-    "password": "tmm******",
+    "username": "elastic",
+    # "user": "cmdb",
+    "password": "wonders,1",
     "index_map": {
         "data": "data",
         "record_data": "record_data",
@@ -203,29 +209,125 @@ ELASTICSEARCH = {
     }
 }
 
-#网站URL
+# 网站URL
 SITE_URL = "http://cmdb.mingmingt.xyz"
 
-#发送邮件邮箱设置
+# 发送邮件邮箱设置
 SEND_EMAIL = 'mmt_cmdb@163.com'
-#
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.163.com'                       #SMTP地址 例如: smtp.163.com
-# EMAIL_PORT = 25                       #SMTP端口 例如: 25
-# EMAIL_HOST_USER = SEND_EMAIL                 #qq的邮箱 例如: xxxxxx@163.com
-# EMAIL_HOST_PASSWORD = 'tmm****** '              #我的邮箱密码 例如  xxxxxxxxx
-# EMAIL_SUBJECT_PREFIX = u'django'       #为邮件Subject-line前缀,默认是'[django]'
-# EMAIL_USE_TLS = True
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.163.com'                       #SMTP地址 例如: smtp.163.com
-EMAIL_PORT = 25                       #SMTP端口 例如: 25
-EMAIL_HOST_USER = SEND_EMAIL                 #qq的邮箱 例如: xxxxxx@163.com
-EMAIL_HOST_PASSWORD = 'mmt******'              #我的邮箱密码 例如  xxxxxxxxx
-EMAIL_SUBJECT_PREFIX = u'django'       #为邮件Subject-line前缀,默认是'[django]'
+EMAIL_HOST = 'smtp.163.com'                                         # SMTP地址 例如: smtp.163.com
+EMAIL_PORT = 25                                                     # SMTP端口 例如: 25
+EMAIL_HOST_USER = SEND_EMAIL                                        # 例如: xxxxxx@163.com
+EMAIL_HOST_PASSWORD = 'cmdb1234'                                    # 邮箱授权码
+EMAIL_SUBJECT_PREFIX = u'django'                                    # 为邮件Subject-line前缀,默认是'[django]'
 EMAIL_USE_TLS = True
-EMAIL_TIMEOUT = 5
+EMAIL_TIMEOUT = 10
 
-#验证码过期时间（秒）
+# 验证码过期时间（秒）
 MAX_AGE = 10 * 60
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'    #日志格式
+        }
+    },
+    'filters': {
+    },
+    'handlers': {
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/default.log',              #日志输出文件
+            'maxBytes': 1024*1024*10,                   #文件最大大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',                        #日志编码格式
+            'formatter': 'standard',                    #使用哪种formatters日志格式
+        },
+        'data': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/data.log',              #日志输出文件
+            'maxBytes': 1024*1024*10,                   #文件最大大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',                        #日志编码格式
+            'formatter': 'standard',                    #使用哪种formatters日志格式
+        },
+        'record_data': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/record_data.log',              #日志输出文件
+            'maxBytes': 1024*1024*10,                   #文件最大大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',                        #日志编码格式
+            'formatter': 'standard',                    #使用哪种formatters日志格式
+        },
+        'deleted_data': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/deleted_data.log',              #日志输出文件
+            'maxBytes': 1024*1024*10,                   #文件最大大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',                        #日志编码格式
+            'formatter': 'standard',                    # 使用哪种formatters日志格式
+        },
+        'mgmt': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/mgmt.log',              #日志输出文件
+            'maxBytes': 1024*1024*10,                   #文件最大大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',                        #日志编码格式
+            'formatter': 'standard',                    # 使用哪种formatters日志格式
+        },
+        'database': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/database.log',     #日志输出文件
+            'maxBytes': 1024*1024*10,                  #文件大小
+            'backupCount': 5,                           #备份份数
+            'encoding': 'utf-8',
+            'formatter': 'standard',                   # 使用哪种formatters日志格式
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG',               # message level to be written to console
+        },
+    },
+    'loggers': {
+        'default': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'data': {
+            'handlers': ['data'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'record_data': {
+            'handlers': ['record_data'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'deleted_data': {
+            'handlers': ['deleted_data'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'mgmt': {
+            'handlers': ['mgmt'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        }
+    }
+}

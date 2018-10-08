@@ -3,7 +3,15 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cmdb.settings")
+    BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+    APP_NAME = BASE_DIR.rsplit("/", 1)[-1]
+    DEV = os.environ.get("ENV")
+    settings = "{}.settings".format(APP_NAME)
+    if DEV == "PRO":
+        settings = "{}.settings_pro".format(APP_NAME)
+
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
@@ -20,3 +28,5 @@ if __name__ == "__main__":
             )
         raise
     execute_from_command_line(sys.argv)
+
+

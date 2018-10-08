@@ -3,19 +3,21 @@ import random
 import datetime
 import requests
 
-username = "admin"
+username = "mmt"
 password = "cmdbcmdb"
 
-url_prefix = "http://cmdb.mingmingt.xyz"
+url_prefix = "http://127.0.0.1"
 
 record_count = 0
 
+
 def get_token():
-    response = requests.post(url_prefix+"/api/v1/token", json.dumps({"username": "admin", "password": "cmdbcmdb"}), headers={"Content-Type": "application/json"})
+    response = requests.post(url_prefix+"/api/v1/token", json.dumps({"username": username, "password": password}), headers={"Content-Type": "application/json"})
     if response.status_code >= 300:
         raise Exception("Get token fail")
     print("Get token success ({})".format(response.json()["token"]))
     return response.json()["token"]
+
 
 def create_table(token):
     data = {
@@ -96,6 +98,7 @@ def create_table(token):
         raise Exception("创建表失败：{}".format(response.text))
     print("Create table succuessfully")
 
+
 def add_record(token, table_name):
 
     server_name_prefix = "rd-bigdata"
@@ -128,6 +131,6 @@ if __name__ == '__main__':
     token = get_token()
     token = "JWT " + token
     print(token)
-    # create_table(token)
+    create_table(token)
     for i in range(1000):
         add_record(token, "physical-server")

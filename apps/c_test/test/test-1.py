@@ -1,3 +1,6 @@
+
+from rest_framework import serializers
+
 instance = {}
 
 def get_instance(a_class, *args):
@@ -25,3 +28,9 @@ b = Person()
 
 print(a.age)
 print(b.age)
+
+class A(serializers.ModelSerializer):
+    pass
+
+a = A()
+a.save()

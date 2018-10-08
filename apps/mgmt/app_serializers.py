@@ -1,4 +1,5 @@
 import re
+import logging
 import datetime
 
 from django.contrib.auth import get_user_model
@@ -16,6 +17,9 @@ User = get_user_model()
 
 MAX_AGE = settings.MAX_AGE
 
+logger = logging.getLogger(__name__)
+
+
 class FieldSerializer(serializers.ModelSerializer):
     def validate_name(self, value):
         if not re.match('[a-z][a-z-0-9]*$', value):
@@ -27,15 +31,21 @@ class FieldSerializer(serializers.ModelSerializer):
         exclude = ("table", )
         # read_only_fields = ("table", "name", "type", "is_multi")
 
+
 class TableSerializer(serializers.ModelSerializer):
     creator = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
     creator_username = serializers.CharField(read_only=True, source="creator.username")
 
-    fields = FieldSerializer(many=True)
+    fields = FieldSerializer(required=True, many=True)
 
     def validate_name(self, value):
         if not re.match('[a-z][a-z-0-9]*$', value):
             raise serializers.ValidationError("Name must be lowercase letters, numbers, hyphens the composition, And can only begin with a latter")
+        return value
+
+    def validate_fields(self, value):
+        if not value:
+            raise exceptions.ValidationError("表字段至少一个")
         return value
 
     class Meta:
@@ -61,8 +71,9 @@ class TableSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(label="邮箱")
-    password = serializers.CharField(required=False, min_length=6, max_length=20, label="密码", write_only=True)
+    # password = serializers.CharField(required=False, min_length=6, max_length=20, label="密码", write_only=True)
     is_staff = serializers.BooleanField(default=False, label="管理员")
+
     def create(self, validated_data):
         password = get_random_string(10)
         user = User.objects.create_user(**validated_data)
@@ -73,23 +84,27 @@ class UserSerializer(serializers.ModelSerializer):
         permissions = "管理员" if validated_data["is_staff"] else "普通用户"
         try:
             send_mail("CMDB 用户创建成功",
-                      "Hi, {}, 您的CMDB用户已成功创建：\n\t用户名:{}\n\t权限:{}\n\t初始密码:{}\n\t网站地址:{}".format(username, username, permissions, password, settings.SITE_URL),
+                      "Hi, {}, 您的CMDB用户已成功创建：\n\t用户名:{}\n\t权限:{}\n\t初始密码:{}\n\t网站地址:{}".format(
+                          username, username, permissions, password, settings.SITE_URL),
                       settings.SEND_EMAIL,
                       [validated_data["email"]],
                       fail_silently=False)
         except Exception as exc:
-            raise exceptions.ParseError("The user created successfully but the notification email fail to be sent, the initial password is {}".format(password))
+            logger.error(f"用户创建成功 邮件发送失败 {exc}")
+            raise exceptions.ParseError("用户创建成功 邮件发送失败")
         return user
 
-    def update(self, instance, validated_data):
-        super().update(instance, validated_data)
-        if "password" in validated_data:
-            instance.set_password(validated_data)
-        return instance
+    # def update(self, instance, validated_data):
+    #     super().update(instance, validated_data)
+    #     if "password" in validated_data:
+    #         instance.set_password(validated_data)
+    #     return instance
 
     class Meta:
         model = User
-        exclude = ("password",)
+        # fields = "__all__"
+        exclude = ("password", )
+
 
 class ChangePWSerializer(serializers.Serializer):
     current_password = serializers.CharField(min_length=6, max_length=20, label="当前密码")
@@ -102,8 +117,10 @@ class ChangePWSerializer(serializers.Serializer):
             raise exceptions.ValidationError("The current password incorrect")
         return value
 
+
 class RestPWVerifyCodeSerializer(serializers.Serializer):
     username = serializers.CharField()
+
     def validate_username(self, value):
         try:
             User.objects.get(username=value)
@@ -111,8 +128,10 @@ class RestPWVerifyCodeSerializer(serializers.Serializer):
             raise exceptions.ValidationError("{} does not exist!".format(value))
         return value
 
+
 class RestPWAdminSerializer(serializers.Serializer):
     new_password = serializers.CharField(min_length=6, max_length=20, label="新密码")
+
 
 class RestPWEmailSerializer(serializers.Serializer):
     username = serializers.CharField(label="用户名")
@@ -131,6 +150,7 @@ class RestPWEmailSerializer(serializers.Serializer):
             raise exceptions.ValidationError("The verifaction code has expired!")
         return attrs
 
+
 class SendVerifyCodeSerializer(serializers.Serializer):
     username = serializers.CharField()
 
@@ -140,3 +160,11 @@ class SendVerifyCodeSerializer(serializers.Serializer):
         except User.DoesNotExist as exc:
             raise exceptions.ValidationError("user {} does not exist".format(value))
         return value
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+    parent__name = serializers.CharField(read_only=True, source="parent.name")
+
+    class Meta:
+        model = models.Department
+        fields = "__all__"

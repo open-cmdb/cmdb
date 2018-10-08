@@ -6,8 +6,10 @@ import requests
 from django.conf import settings
 from django.core.mail import send_mail
 
+
 class EmailVerifyCode():
     verifycode_range = "1234567890"
+
     def generation_verifycode(self, length=6):
         return "".join(random.sample(self.verifycode_range, length))
 
