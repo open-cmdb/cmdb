@@ -162,7 +162,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_mgmt_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_mgmt_user_id` FOREIGN KEY (`user_id`) REFERENCES `mgmt_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +171,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2018-09-08 20:03:19.177040','2','唐明明',2,'[{\"changed\": {\"fields\": [\"first_name\", \"name\", \"permissions\"]}}]',1,1),(2,'2018-09-23 01:14:29.669643','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(3,'2018-09-23 01:18:35.233175','1','软件研发中心',1,'[{\"added\": {}}]',2,1),(4,'2018-09-23 01:18:52.135913','2','运维',1,'[{\"added\": {}}]',2,1),(5,'2018-09-23 01:19:46.266670','4','李四44',2,'[{\"changed\": {\"fields\": [\"departments\"]}}]',1,1),(6,'2018-10-08 09:01:19.379541','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(7,'2018-10-08 09:49:27.621413','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(8,'2018-10-08 14:47:10.880123','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(9,'2018-10-13 18:58:57.606166','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1),(10,'2018-10-13 19:07:07.815126','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1),(11,'2018-10-13 19:07:32.740503','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1);
+INSERT INTO `django_admin_log` VALUES (1,'2018-09-08 20:03:19.177040','2','唐明明',2,'[{\"changed\": {\"fields\": [\"first_name\", \"name\", \"permissions\"]}}]',1,1),(2,'2018-09-23 01:14:29.669643','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(3,'2018-09-23 01:18:35.233175','1','软件研发中心',1,'[{\"added\": {}}]',2,1),(4,'2018-09-23 01:18:52.135913','2','运维',1,'[{\"added\": {}}]',2,1),(5,'2018-09-23 01:19:46.266670','4','李四44',2,'[{\"changed\": {\"fields\": [\"departments\"]}}]',1,1),(6,'2018-10-08 09:01:19.379541','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(7,'2018-10-08 09:49:27.621413','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(8,'2018-10-08 14:47:10.880123','4','李四44',2,'[{\"changed\": {\"fields\": [\"permissions\"]}}]',1,1),(9,'2018-10-13 18:58:57.606166','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1),(10,'2018-10-13 19:07:07.815126','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1),(11,'2018-10-13 19:07:32.740503','2','唐明明',2,'[{\"changed\": {\"fields\": [\"is_superuser\"]}}]',1,1),(12,'2018-10-13 21:54:44.991052','2','运维',3,'',2,1),(13,'2018-10-13 21:54:51.340873','1','软件研发中心',3,'',2,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +280,6 @@ CREATE TABLE `mgmt_department` (
 
 LOCK TABLES `mgmt_department` WRITE;
 /*!40000 ALTER TABLE `mgmt_department` DISABLE KEYS */;
-INSERT INTO `mgmt_department` VALUES (1,'软件研发中心',2,'2018-09-23 01:18:35.218049','2018-09-23 01:18:35.218130',NULL),(2,'运维',3,'2018-09-23 01:18:52.110264','2018-09-23 01:18:52.110343',1);
 /*!40000 ALTER TABLE `mgmt_department` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -457,7 +456,7 @@ CREATE TABLE `mgmt_user` (
 
 LOCK TABLES `mgmt_user` WRITE;
 /*!40000 ALTER TABLE `mgmt_user` DISABLE KEYS */;
-INSERT INTO `mgmt_user` VALUES (1,'pbkdf2_sha256$36000$ELcqeR6ZhHPu$rRw5lwaFAiS7zqmyH/OA2lsDDbO+KezJBzvXqEIXn7A=','2018-10-13 18:58:43.011406',1,'admin','','','',1,1,'2018-08-25 14:37:29.023483','管理员',''),(2,'pbkdf2_sha256$36000$lrOITdybE3Xt$PPGWv8DT9kV1c4DCc2VQgE7dpsJv4HuQ74psxYRMrTc=',NULL,0,'mmt','','','tangmingming@hellobike.com',1,1,'2018-09-08 16:08:25.000000','唐明明','');
+INSERT INTO `mgmt_user` VALUES (1,'pbkdf2_sha256$36000$ELcqeR6ZhHPu$rRw5lwaFAiS7zqmyH/OA2lsDDbO+KezJBzvXqEIXn7A=','2018-10-13 18:58:43.011406',1,'admin','','','',1,1,'2018-08-25 14:37:29.023483','管理员','');
 /*!40000 ALTER TABLE `mgmt_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -582,4 +581,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-13 11:22:33
+-- Dump completed on 2018-10-13 13:56:59
