@@ -16,7 +16,7 @@
 https://zhuanlan.zhihu.com/p/34191320
 
 ## 在线演示
-http://120.79.60.130/#/user/login
+http://cmdb.mmtweb.xyz
 用户名：admin  密码：cmdbcmdb (请不要修改)
 
 ## 特性
@@ -24,7 +24,7 @@ http://120.79.60.130/#/user/login
 * REST前后端分离架构 开放所有API接口
 * 强大的搜索查找能力（后端使用elasticsearch存储数据 ） 可以配合kibana使用
 * 支持查看数据修改记录
-* 支持LDAP统一认证接入
+* 表级权限管理
 * 容器快速部署
 
 ### 前端
@@ -91,10 +91,10 @@ def run_es_container():
     base("sudo docker run --name cmdb-es -d -v /var/cmdb/es:/usr/share/elasticsearch/data elasticsearch:5.6.8")
 
 def init_db():
-    base("sudo docker run -it --rm --link cmdb-db -e DB_HOST=cmdb-db -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb mingmingtang/cmdb init-db")
+    base("sudo docker run -it --rm --link cmdb-db -e DB_HOST=cmdb-db -e ENV=PRO -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb mingmingtang/cmdb init-db")
 
 def run_cmdb_container(site_url, email_host, email_port, email_username, email_password):
-    base("sudo docker run -d --name cmdb --link cmdb-db --link cmdb-es -p 80:80 -e SITE_URL={} -e DB_HOST=cmdb-db -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=cmdb-es -e EMAIL_HOST={} -e EMAIL_PORT={} -e EMAIL_USERNAME={} -e EMAIL_PASSWORD={} mingmingtang/cmdb start".format(site_url, email_host, email_port, email_username, email_password))
+    base("sudo docker run -d --name cmdb --link cmdb-db --link cmdb-es -p 80:80 -e ENV=PRO -e SITE_URL={} -e DB_HOST=cmdb-db -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=cmdb-es -e EMAIL_HOST={} -e EMAIL_PORT={} -e EMAIL_USERNAME={} -e EMAIL_PASSWORD={} mingmingtang/cmdb start".format(site_url, email_host, email_port, email_username, email_password))
 
 def input_para(help):
     value = ""
@@ -145,20 +145,20 @@ mingmingtang/cmdb
 
 ### 初始化数据库
 ```bash
-docker run -it --name cmdb-init-db --rm -e DB_HOST=数据库地址 -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb mingmingtang/cmdb init-db
+docker run -it --name cmdb-init-db --rm -e DB_HOST=数据库地址 -e ENV=PRO -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb mingmingtang/cmdb init-db
 ```
 示例：
 ```bash
-docker run -it --name cmdb-init-db --rm DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
+docker run -it --name cmdb-init-db --rm DB_HOST=172.16.0.11 -e ENV=PRO -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
 ```
 
 ### 运行CMDB
 ```bash
-docker run -d --name cmdb -p 80:80 -e SITE_URL=网站地址 -e DB_HOST=数据库地址 -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=ES地址，多个用英文逗号隔开，格式http://xx.xx.xx.xx:9200 -e EMAIL_HOST=邮箱smtp地址 -e EMAIL_PORT=邮箱smtp端口 -e EMAIL_USERNAME=发件箱 -e EMAIL_PASSWORD=邮箱密码 mingmingtang/cmdb start
+docker run -d --name cmdb -p 80:80 -e ENV=PRO -e SITE_URL=网站地址 -e DB_HOST=数据库地址 -e DB_PORT=数据库端口 -e DB_USERNAME=数据库用户名 -e DB_PASSWORD=数据库密码 -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=ES地址，多个用英文逗号隔开，格式http://xx.xx.xx.xx:9200 -e EMAIL_HOST=邮箱smtp地址 -e EMAIL_PORT=邮箱smtp端口 -e EMAIL_USERNAME=发件箱 -e EMAIL_PASSWORD=邮箱密码 mingmingtang/cmdb start
 ```
 示例：
 ```bash
-docker run -d --name cmdb -p 80:80 -e SITE_URL=http://120.79.60.130 -e DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=http://127.0.0.1:9200 -e EMAIL_HOST=smtp.163.com -e EMAIL_PORT=25 -e EMAIL_USERNAME=mmt_cmdb@163.com -e EMAIL_PASSWORD=******** mingmingtang/cmdb start
+docker run -d --name cmdb -p 80:80 -e ENV=PRO -e SITE_URL=http://120.79.60.130 -e DB_HOST=172.16.0.11 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=http://127.0.0.1:9200 -e EMAIL_HOST=smtp.163.com -e EMAIL_PORT=25 -e EMAIL_USERNAME=mmt_cmdb@163.com -e EMAIL_PASSWORD=******** mingmingtang/cmdb start
 ```
 
 ## 嘿 哥们儿 给颗星吧 ┭┮﹏┭┮

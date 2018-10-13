@@ -3,10 +3,10 @@ import random
 import datetime
 import requests
 
-username = "mmt"
+username = "admin"
 password = "cmdbcmdb"
 
-url_prefix = "http://127.0.0.1"
+url_prefix = "http://cmdb.mmtweb.xyz"
 
 record_count = 0
 
