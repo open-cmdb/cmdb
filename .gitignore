@@ -1,0 +1,7 @@
+*.log
+*.log.[12345]
+*.py[cod]
+*.pid
+
+# Editor directories and files
+.idea
