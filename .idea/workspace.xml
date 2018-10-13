@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0598c97-3762-4ca6-b2f0-36819c21992a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/apps/mgmt/management/commands/cmdb_create_superuser.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/apps/mgmt/migrations/0002_restpwverifycode.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/apps/search/permissions.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmdb/settings_pro.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmdb/wsgi.back.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/manage.back.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package_upload.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/utils/metadata.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/utils/models.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/apps/c_test/migrations/0002_person.py" afterPath="$PROJECT_DIR$/apps/c_test/migrations/0001_initial.py" />
-      <change beforePath="$PROJECT_DIR$/apps/c_test/test/test-1.py" afterPath="$PROJECT_DIR$/apps/c_test/test/test-1.py" />
-      <change beforePath="$PROJECT_DIR$/apps/c_test/test/test_8.py" afterPath="$PROJECT_DIR$/apps/c_test/test/test_8.py" />
-      <change beforePath="$PROJECT_DIR$/apps/data/initialize.py" afterPath="$PROJECT_DIR$/apps/data/initialize.py" />
-      <change beforePath="$PROJECT_DIR$/apps/deleted_data/initialize.py" afterPath="$PROJECT_DIR$/apps/deleted_data/initialize.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/admin.py" afterPath="$PROJECT_DIR$/apps/mgmt/admin.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/app_serializers.py" afterPath="$PROJECT_DIR$/apps/mgmt/app_serializers.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/initialize.py" afterPath="$PROJECT_DIR$/apps/mgmt/initialize.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/apps/mgmt/migrations/0001_initial.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/migrations/0002_auto_20180226_1535.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/models.py" afterPath="$PROJECT_DIR$/apps/mgmt/models.py" />
-      <change beforePath="$PROJECT_DIR$/apps/mgmt/urls.py" afterPath="$PROJECT_DIR$/apps/mgmt/urls.py" />
       <change beforePath="$PROJECT_DIR$/apps/mgmt/views.py" afterPath="$PROJECT_DIR$/apps/mgmt/views.py" />
-      <change beforePath="$PROJECT_DIR$/apps/record_data/initialize.py" afterPath="$PROJECT_DIR$/apps/record_data/initialize.py" />
-      <change beforePath="$PROJECT_DIR$/apps/search/app_serializers.py" afterPath="$PROJECT_DIR$/apps/search/app_serializers.py" />
-      <change beforePath="$PROJECT_DIR$/apps/search/urls.py" afterPath="$PROJECT_DIR$/apps/search/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/search/views.py" afterPath="$PROJECT_DIR$/apps/search/views.py" />
-      <change beforePath="$PROJECT_DIR$/cmdb/settings.env.py" afterPath="$PROJECT_DIR$/cmdb/settings.env.py.back" />
-      <change beforePath="$PROJECT_DIR$/cmdb/settings.py" afterPath="$PROJECT_DIR$/cmdb/settings.py" />
-      <change beforePath="$PROJECT_DIR$/cmdb/urls.py" afterPath="$PROJECT_DIR$/cmdb/urls.py" />
-      <change beforePath="$PROJECT_DIR$/cmdb/wsgi.py" afterPath="$PROJECT_DIR$/cmdb/wsgi.py" />
-      <change beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change beforePath="$PROJECT_DIR$/tools/physical_server.py" afterPath="$PROJECT_DIR$/tools/physical_server.py" />
-      <change beforePath="$PROJECT_DIR$/utils/c_pagination.py" afterPath="$PROJECT_DIR$/utils/c_pagination.py" />
-      <change beforePath="$PROJECT_DIR$/utils/c_permissions.py" afterPath="$PROJECT_DIR$/utils/c_permissions.py" />
-      <change beforePath="$PROJECT_DIR$/utils/es.py" afterPath="$PROJECT_DIR$/utils/es.py" />
-      <change beforePath="$PROJECT_DIR$/utils/middleware.py" afterPath="$PROJECT_DIR$/utils/middleware.py" />
-      <change beforePath="$PROJECT_DIR$/utils/verify_code.py" afterPath="$PROJECT_DIR$/utils/verify_code.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -81,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/mgmt/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="116">
+              <caret line="140" column="36" lean-forward="false" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -93,26 +56,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/c_test/views.py">
+      <file leaf-file-name="app_serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/mgmt/app_serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2286">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_8.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/c_test/test/test_8.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/mgmt/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="287">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +79,8 @@
       <file leaf-file-name="test-1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/c_test/test/test-1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="595">
+              <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -130,21 +89,51 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../.django-1.11/lib/python3.6/site-packages/rest_framework/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5071">
+            <state relative-caret-position="15300">
               <caret line="957" column="22" lean-forward="false" selection-start-line="957" selection-start-column="17" selection-end-line="957" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package_upload.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package_upload.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package_upload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="391">
+              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding>
                 <element signature="e#38#55#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmdb/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3638">
+              <caret line="217" column="33" lean-forward="false" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings_pro.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmdb/settings_pro.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="237" column="16" lean-forward="true" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,38 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mixins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../.django-1.11/lib/python3.6/site-packages/rest_framework/mixins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmdb/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-              <folding>
-                <element signature="e#228#237#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -230,9 +187,9 @@
       <find>database</find>
       <find>ldap</find>
       <find>elastic</find>
-      <find>table</find>
       <find>is_data_raise</find>
       <find>save(</find>
+      <find>table</find>
     </findStrings>
     <replaceStrings>
       <replace>S_</replace>
@@ -302,14 +259,14 @@
         <option value="$PROJECT_DIR$/apps/record_data/initialize.py" />
         <option value="$PROJECT_DIR$/utils/c_permissions.py" />
         <option value="$PROJECT_DIR$/apps/search/views.py" />
-        <option value="$PROJECT_DIR$/apps/mgmt/app_serializers.py" />
         <option value="$PROJECT_DIR$/cmdb/settings.env.py" />
         <option value="$PROJECT_DIR$/cmdb/settings.env.py.back" />
         <option value="$PROJECT_DIR$/cmdb/wsgi.py" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/apps/mgmt/views.py" />
         <option value="$PROJECT_DIR$/apps/c_test/test/test-1.py" />
         <option value="$PROJECT_DIR$/package_upload.py" />
+        <option value="$PROJECT_DIR$/apps/mgmt/app_serializers.py" />
+        <option value="$PROJECT_DIR$/apps/mgmt/views.py" />
       </list>
     </option>
   </component>
@@ -378,6 +335,22 @@
           <expand>
             <path>
               <item name="cmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmdb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmdb" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmdb" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="mgmt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmdb" type="462c0819:PsiDirectoryNode" />
               <item name="cmdb" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -598,15 +571,13 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3415638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23763736" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28434065" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23319027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16122448" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2360515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2152502" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20879121" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42032966" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -614,6 +585,8 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@cmdb" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31550068" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -715,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/mgmt/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -818,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,9 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="111" lean-forward="false" selection-start-line="14" selection-start-column="111" selection-end-line="14" selection-end-column="111" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -852,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,9 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#66#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="164" column="100" lean-forward="true" selection-start-line="164" selection-start-column="100" selection-end-line="164" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,17 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/mgmt/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,9 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-56">
           <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,15 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/mgmt/app_serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,23 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="201" column="18" lean-forward="false" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb/settings_pro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="223" column="18" lean-forward="false" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1210">
-          <caret line="217" column="33" lean-forward="false" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,17 +941,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="e#228#237#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1056,19 +959,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/mgmt/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/c_test/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2286">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1081,7 +974,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1096,15 +989,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/c_test/test/test-1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="595">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../.django-1.11/lib/python3.6/site-packages/rest_framework/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5071">
+        <state relative-caret-position="15300">
           <caret line="957" column="22" lean-forward="false" selection-start-line="957" selection-start-column="17" selection-end-line="957" selection-end-column="22" />
           <folding />
         </state>
@@ -1112,10 +1005,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package_upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="391">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
             <element signature="e#38#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmdb/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3638">
+          <caret line="217" column="33" lean-forward="false" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmdb/settings_pro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="237" column="16" lean-forward="true" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mgmt/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mgmt/app_serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mgmt/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="140" column="36" lean-forward="false" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

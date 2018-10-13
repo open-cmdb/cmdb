@@ -1000,3 +1000,12 @@ AttributeError: module 'mgmt.models' has no attribute 'RestPWVerifyCode'
 2018-09-08 17:29:02,531 [Thread-14:123145431494656] [default:94] [views:destroy] [DEBUG]- mmt删除表test-7
 2018-09-22 14:50:27,178 [Thread-27:123145515151360] [default:94] [views:destroy] [DEBUG]- admin删除表mkmk
 2018-09-23 00:54:52,563 [Thread-85:123145375117312] [default:94] [views:destroy] [DEBUG]- admin删除表date
+2018-10-13 19:14:34,492 [Thread-57:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-7
+2018-10-13 19:14:41,157 [Thread-58:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-5
+2018-10-13 19:14:46,075 [Thread-59:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-4
+2018-10-13 19:14:49,755 [Thread-60:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-3
+2018-10-13 19:14:53,501 [Thread-61:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-1
+2018-10-13 19:15:02,331 [Thread-62:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-2
+2018-10-13 19:15:10,646 [Thread-63:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表physical-server
+2018-10-13 19:21:19,046 [Thread-72:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-9
+2018-10-13 19:21:23,764 [Thread-73:123145521938432] [default:110] [views:destroy] [DEBUG]- admin删除表test-8

@@ -136,8 +136,10 @@ class UserViewset(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        if(instance.is_superuser):
+        if instance.is_superuser:
             raise exceptions.ParseError("Super user can not delete")
+        if instance.table_set.exists():
+            raise exceptions.ParseError("该用户创建过表 无法删除 请将其设置为禁用")
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
