@@ -199,7 +199,7 @@ JWT_AUTH = {
 
 ELASTICSEARCH = {
     "hosts": os.getenv("ELASTICSEARCH_HOSTS", "").split(","),
-    "user": os.getenv("ELASTICSEARCH_USERNAME", ""),
+    "username": os.getenv("ELASTICSEARCH_USERNAME", ""),
     "password": os.getenv("ELASTICSEARCH_PASSWORD", ""),
     "index_map": {
         "data": "data",
