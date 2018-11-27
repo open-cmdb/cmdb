@@ -21,7 +21,7 @@ http://cmdb.mmtweb.xyz
 
 ## 问答群
 <p align="center">
-    <img src="https://github.com/open-cmdb/cmdb/blob/dev/images/cmdb-weichat-QR.png">
+    <img src="https://github.com/open-cmdb/cmdb/blob/master/images/cmdb-weichat-QR.png">
 </p>
 
 ## 特性
