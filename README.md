@@ -19,6 +19,11 @@ https://zhuanlan.zhihu.com/p/34191320
 http://cmdb.mmtweb.xyz
 用户名：admin  密码：cmdbcmdb (请不要修改)
 
+## 问答群
+<p align="center">
+    <img src="https://github.com/open-cmdb/cmdb/blob/dev/images/cmdb-weichat-QR.png">
+</p>
+
 ## 特性
 * 热添加删除表 自定义字段类型
 * REST前后端分离架构 开放所有API接口
