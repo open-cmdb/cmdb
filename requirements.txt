@@ -8,3 +8,4 @@ elasticsearch_dsl==5.4.0
 mysqlclient==1.3.12
 Markdown==2.6.10
 coreapi==2.3.3
+django-cors-headers==2.2.0
