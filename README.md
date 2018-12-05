@@ -154,7 +154,7 @@ docker run -it --name cmdb-init-db --rm -e DB_HOST=数据库地址 -e ENV=PRO -e
 ```
 示例：
 ```bash
-docker run -it --name cmdb-init-db --rm DB_HOST=172.16.0.11 -e ENV=PRO -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
+docker run -it --name cmdb-init-db --rm -e DB_HOST=172.16.0.11 -e ENV=PRO -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=******** -e DB_NAME=cmdb mingmingtang/cmdb init-db
 ```
 
 ### 运行CMDB
