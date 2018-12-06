@@ -143,7 +143,7 @@ if __name__ == '__main__':
 ```
 
 ## 手工部署
-先安装好Elasticsearch 和 Mysql
+先安装好Elasticsearch(5.6) 和 Mysql(5.7) 其它版本未测试
 
 ### 容器名称
 mingmingtang/cmdb
