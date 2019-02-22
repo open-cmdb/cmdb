@@ -7,6 +7,7 @@ username = "admin"
 password = "cmdbcmdb"
 
 url_prefix = "http://cmdb.mmtweb.xyz"
+# url_prefix = "http://localhost:8000"
 
 record_count = 0
 
@@ -131,6 +132,6 @@ if __name__ == '__main__':
     token = get_token()
     token = "JWT " + token
     print(token)
-    create_table(token)
+    # create_table(token)
     for i in range(1000):
         add_record(token, "physical-server")

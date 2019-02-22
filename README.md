@@ -16,7 +16,7 @@
 https://zhuanlan.zhihu.com/p/34191320
 
 ## 在线演示
-http://cmdb.mmtweb.xyz
+http://cmdb.xyz
 用户名：admin  密码：cmdbcmdb (请不要修改)
 
 ## 问答群
