@@ -99,7 +99,7 @@ def init_db():
     base("sudo docker run -it --rm --link cmdb-db -e DB_HOST=cmdb-db -e ENV=PRO -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb mingmingtang/cmdb init-db")
 
 def run_cmdb_container(site_url, email_host, email_port, email_username, email_password):
-    base("sudo docker run -d --name cmdb --link cmdb-db --link cmdb-es -p 80:80 -e ENV=PRO -e SITE_URL={} -e DB_HOST=cmdb-db -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=cmdb-es -e EMAIL_HOST={} -e EMAIL_PORT={} -e EMAIL_USERNAME={} -e EMAIL_PASSWORD={} mingmingtang/cmdb start".format(site_url, email_host, email_port, email_username, email_password))
+    base("""sudo docker run -d --name cmdb --link cmdb-db --link cmdb-es -p 80:80 -e ENV=PRO -e SITE_URL={} -e DB_HOST=cmdb-db -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=cmdbcmdb -e DB_NAME=cmdb -e ELASTICSEARCH_HOSTS=cmdb-es -e EMAIL_HOST={} -e EMAIL_PORT={} -e EMAIL_USERNAME={} -e EMAIL_PASSWORD="{}" mingmingtang/cmdb start""".format(site_url, email_host, email_port, email_username, email_password))
 
 def input_para(help):
     value = ""
